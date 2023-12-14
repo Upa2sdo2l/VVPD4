@@ -32,7 +32,49 @@ def count_knight_moves(start, end):
 
     return moves
 
-
 def min_moves_between_knights(knight1, knight2):
     return count_knight_moves(knight1, knight2)
+
+def main():
+    while True:
+        print('[1]Найти минимальное количество ходов\n'
+              '[2]Найти минимальное расстояние\n'
+              '[3]Завершить работу программы')
+        choice = input()
+        try:
+            choice = int(choice)
+            if choice == 1:
+                print('Введите начальное и конечное положение коня на доске')
+                print('Введите начальное положение:')
+                x1, y1 = input().split()
+                print('Введите конечное положение:')
+                x2, y2 = input().split()
+                try:
+                    x1 = int(x1)
+                    y1 = int(y1)
+                    x2 = int(x2)
+                    y2 = int(y2)
+                    print(f'минимальное количество ходов:{count_knight_moves((x1,y1), (x2,y2))}')
+                except ValueError:
+                    print('Неверный ввод')
+            elif choice == 2:
+                print('Введите положение коней на доске')
+                print('Введите положение первого коня:')
+                x1, y1 = input().split()
+                print('Введите положение второго коня:')
+                x2, y2 = input().split()
+                try:
+                    x1 = int(x1)
+                    y1 = int(y1)
+                    x2 = int(x2)
+                    y2 = int(y2)
+                    print(f'минимальное расстояние:{min_moves_between_knights((x1, y1), (x2, y2))}')
+                except ValueError:
+                    print('Неверный ввод')
+            elif choice == 3:
+                sys.exit(0)
+            else:
+                print('Неверный ввод')
+        except ValueError:
+            print('Неверный ввод')
 
