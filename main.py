@@ -31,3 +31,8 @@ def count_knight_moves(start, end):
         moves += 1
 
     return moves
+
+
+def min_moves_between_knights(knight1, knight2):
+    return count_knight_moves(knight1, knight2)
+
