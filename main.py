@@ -32,8 +32,10 @@ def count_knight_moves(start, end):
 
     return moves
 
+
 def min_moves_between_knights(knight1, knight2):
     return count_knight_moves(knight1, knight2)
+
 
 def main():
     while True:
@@ -78,3 +80,6 @@ def main():
         except ValueError:
             print('Неверный ввод')
 
+
+if __name__ == '__main__':
+    main()
